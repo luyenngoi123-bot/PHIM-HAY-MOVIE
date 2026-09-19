@@ -19,7 +19,6 @@ body{
     color:white;
 }
 
-/* HEADER */
 header{
     height:70px;
     background:#11131a;
@@ -69,7 +68,6 @@ nav a:hover{
     outline:none;
 }
 
-/* HERO */
 .hero{
     min-height:450px;
     padding:70px 8%;
@@ -131,7 +129,6 @@ nav a:hover{
     transform:scale(1.04);
 }
 
-/* MAIN */
 main{
     padding:50px 6%;
 }
@@ -151,7 +148,6 @@ main{
     color:#777;
 }
 
-/* CATEGORY */
 .categories{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -203,7 +199,6 @@ main{
     font-size:65px;
 }
 
-/* MOVIES */
 .movies{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -231,6 +226,14 @@ main{
     justify-content:center;
     font-size:65px;
     background:linear-gradient(135deg,#25283a,#111219);
+    overflow:hidden;
+}
+
+.poster img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
 
 .info{
@@ -247,7 +250,30 @@ main{
     font-size:13px;
 }
 
-/* FOOTER */
+.watch-buttons{
+    display:flex;
+    gap:8px;
+    margin-top:12px;
+}
+
+.watch-buttons button{
+    flex:1;
+    border:none;
+    border-radius:8px;
+    padding:9px 5px;
+    background:#ff5fa2;
+    color:white;
+    font-size:11px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.watch-buttons button:hover{
+    transform:scale(1.04);
+    background:#ff78b3;
+}
+
 footer{
     text-align:center;
     padding:40px;
@@ -256,7 +282,6 @@ footer{
     margin-top:30px;
 }
 
-/* MOBILE */
 @media(max-width:900px){
 
     header{
@@ -314,7 +339,6 @@ footer{
 
 <header>
 
-```
 <div class="logo">
     PHIM<span>HAY</span>
 </div>
@@ -326,175 +350,181 @@ footer{
 </nav>
 
 <input
-    id="search"
-    class="search"
-    type="text"
-    placeholder="🔍 Tìm phim..."
-    oninput="searchMovie()"
+id="search"
+class="search"
+type="text"
+placeholder="🔍 Tìm phim..."
+oninput="searchMovie()"
+
 >
-```
 
 </header>
 
 <section class="hero">
 
-```
 <div class="hero-content">
 
-    <div class="small-title">
-        PHIM HAY MOVIE
-    </div>
+```
+<div class="small-title">
+    PHIM HAY MOVIE
+</div>
 
-    <h1>
-        Conan ×<br>
-        Doraemon
-    </h1>
+<h1>
+    Conan ×<br>
+    Doraemon
+</h1>
 
-    <p>
-        Khám phá thế giới movie của Detective Conan
-        và Doraemon. Tìm kiếm những bộ phim yêu thích
-        và khám phá thông tin về từng movie.
-    </p>
+<p>
+    Khám phá thế giới movie của Detective Conan
+    và Doraemon. Tìm kiếm những bộ phim yêu thích
+    và khám phá thông tin về từng movie.
+</p>
 
-    <div class="buttons">
+<div class="buttons">
 
-        <button
-            class="btn btn1"
-            onclick="filterMovie('conan')">
-            🕵️ Conan
-        </button>
+    <button
+        class="btn btn1"
+        onclick="filterMovie('conan')">
+        🕵️ Conan
+    </button>
 
-        <button
-            class="btn btn2"
-            onclick="filterMovie('doraemon')">
-            🤖 Doraemon
-        </button>
-
-    </div>
+    <button
+        class="btn btn2"
+        onclick="filterMovie('doraemon')">
+        🤖 Doraemon
+    </button>
 
 </div>
 ```
+
+</div>
 
 </section>
 
 <main>
 
-```
 <div class="title">
     <h2>🎬 Chọn series</h2>
     <span>2 Series</span>
 </div>
 
-
 <div class="categories">
 
-    <div
-        class="category conan"
-        onclick="filterMovie('conan')">
+```
+<div
+    class="category conan"
+    onclick="filterMovie('conan')">
 
-        <h3>Detective Conan</h3>
+    <h3>Detective Conan</h3>
 
-        <p>
-            Khám phá thế giới trinh thám của Conan.
-        </p>
+    <p>
+        Khám phá thế giới trinh thám của Conan.
+    </p>
 
-        <div class="icon">🕵️</div>
-
-    </div>
-
-
-    <div
-        class="category doraemon"
-        onclick="filterMovie('doraemon')">
-
-        <h3>Doraemon</h3>
-
-        <p>
-            Cùng Doraemon bước vào những cuộc phiêu lưu.
-        </p>
-
-        <div class="icon">🤖</div>
-
-    </div>
+    <div class="icon">🕵️</div>
 
 </div>
 
+<div
+    class="category doraemon"
+    onclick="filterMovie('doraemon')">
+
+    <h3>Doraemon</h3>
+
+    <p>
+        Cùng Doraemon bước vào những cuộc phiêu lưu.
+    </p>
+
+    <div class="icon">🤖</div>
+
+</div>
+```
+
+</div>
 
 <div class="title">
 
-    <h2>🔥 Movie nổi bật</h2>
+```
+<h2>🔥 Movie nổi bật</h2>
 
-    <span id="count">
-        4 Movie
-    </span>
+<span id="count">
+    2 Movie
+</span>
+```
+
+</div>
+
+<div class="movies" id="movieList">
+
+```
+<!-- CONAN MOVIE 1 -->
+
+<div
+    class="movie"
+    data-name="conan conan1 conan movie 1 movie 1">
+
+    <div class="poster">
+        <img
+            src="https://i.postimg.cc/2rnPJ8r3/movie1-1764648207942704921007.webp"
+            alt="Conan Movie 1">
+    </div>
+
+    <div class="info">
+
+        <h3>Conan Movie 1</h3>
+
+        <p>
+            The Time-Bombed Skyscraper
+        </p>
+
+        <div class="watch-buttons">
+
+            <button onclick="watchMovie('conan1-sub')">
+                XEM PHỤ ĐỀ
+            </button>
+
+            <button onclick="watchMovie('conan1-dub')">
+                LỒNG TIẾNG
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
 
-<div class="movies" id="movieList">
+<!-- DORAEMON MOVIE 45 -->
 
-    <div class="movie" data-name="conan">
+<div
+    class="movie"
+    data-name="doraemon doraemon45 doraemon movie 45 movie 45">
 
-        <div class="poster">
-            🕵️
-        </div>
+    <div class="poster">
 
-        <div class="info">
-
-            <h3>Detective Conan</h3>
-
-            <p>Conan Movie</p>
-
-        </div>
+        <img
+            src="https://i.postimg.cc/J4T3gkhd/images.jpg"
+            alt="Doraemon Movie 45">
 
     </div>
 
+    <div class="info">
 
-    <div class="movie" data-name="conan">
+        <h3>Doraemon Movie 45</h3>
 
-        <div class="poster">
-            🔎
-        </div>
+        <p>
+            Doraemon Movie 45
+        </p>
 
-        <div class="info">
+        <div class="watch-buttons">
 
-            <h3>Conan Movie</h3>
+            <button onclick="watchMovie('doraemon45-sub')">
+                XEM PHỤ ĐỀ
+            </button>
 
-            <p>Detective Conan</p>
-
-        </div>
-
-    </div>
-
-
-    <div class="movie" data-name="doraemon">
-
-        <div class="poster">
-            🤖
-        </div>
-
-        <div class="info">
-
-            <h3>Doraemon</h3>
-
-            <p>Doraemon Movie</p>
-
-        </div>
-
-    </div>
-
-
-    <div class="movie" data-name="doraemon">
-
-        <div class="poster">
-            🚀
-        </div>
-
-        <div class="info">
-
-            <h3>Doraemon Movie</h3>
-
-            <p>Doraemon</p>
+            <button onclick="watchMovie('doraemon45-dub')">
+                LỒNG TIẾNG
+            </button>
 
         </div>
 
@@ -502,6 +532,8 @@ footer{
 
 </div>
 ```
+
+</div>
 
 </main>
 
@@ -540,36 +572,37 @@ function filterMovie(type){
 
 function searchMovie(){
 
-    let text=
+    let text =
         document
         .getElementById("search")
         .value
         .toLowerCase()
         .trim();
 
-    let movies=
+    let movies =
         document.querySelectorAll(".movie");
 
-    let count=0;
+    let count = 0;
 
-    movies.forEach(movie=>{
+    movies.forEach(movie => {
 
-        let name=
+        let name =
             movie
-            .getAttribute("data-name");
+            .getAttribute("data-name")
+            .toLowerCase();
 
         if(
-            text==="" ||
+            text === "" ||
             name.includes(text)
         ){
 
-            movie.style.display="block";
+            movie.style.display = "block";
 
             count++;
 
         }else{
 
-            movie.style.display="none";
+            movie.style.display = "none";
 
         }
 
@@ -577,8 +610,29 @@ function searchMovie(){
 
     document
         .getElementById("count")
-        .innerText=
-        count+" Movie";
+        .innerText =
+        count + " Movie";
+}
+
+
+function watchMovie(type){
+
+    if(type === "conan1-sub"){
+        alert("Conan Movie 1 • Phụ đề");
+    }
+
+    else if(type === "conan1-dub"){
+        alert("Conan Movie 1 • Lồng tiếng");
+    }
+
+    else if(type === "doraemon45-sub"){
+        alert("Doraemon Movie 45 • Phụ đề");
+    }
+
+    else if(type === "doraemon45-dub"){
+        alert("Doraemon Movie 45 • Lồng tiếng");
+    }
+
 }
 
 </script>
