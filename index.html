@@ -1,0 +1,180 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anime Movie</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#08080d;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+/* HEADER */
+
+header{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 45px;
+
+    background:#101018;
+    border-bottom:1px solid #292936;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ff6cab;
+}
+
+.logo span{
+    color:white;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:#ff6cab;
+}
+
+.search{
+    width:220px;
+    height:38px;
+
+    border:none;
+    outline:none;
+
+    padding:0 15px;
+
+    border-radius:20px;
+
+    background:#1b1b27;
+    color:white;
+}
+
+.search::placeholder{
+    color:#777;
+}
+
+/* HERO */
+
+.hero{
+    min-height:470px;
+
+    display:flex;
+    align-items:center;
+
+    padding:70px 8%;
+
+    background:
+    radial-gradient(
+        circle at 75% 50%,
+        rgba(255,80,160,.25),
+        transparent 30%
+    ),
+    linear-gradient(
+        120deg,
+        #08080d,
+        #151522
+    );
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero-label{
+    color:#ff6cab;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:60px;
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#aaa;
+    font-size:16px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.btn{
+    padding:13px 25px;
+    border-radius:25px;
+}
+
+.btn-conan{
+    background:#ff5fa8;
+    color:white;
+}
+
+.btn-doraemon{
+    background:#292936;
+    color:white;
+}
+
+.btn:hover{
+    transform:scale(1.04);
+}
+
+/* MAIN */
+
+main{
+    padding:50px 6%;
+}
+
+.title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.title h2{
+    font-size:26px;
+}
+```
